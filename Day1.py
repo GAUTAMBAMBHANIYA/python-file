@@ -1,0 +1,6 @@
+print("Hllo, world!")
+print(3)
+print(3*4)
+print("hello",6,7)
+print(3,4,5,6,sep="--")
+print("hello","jarvis",sep="--",end=" CALLED BY IRONMAN")
