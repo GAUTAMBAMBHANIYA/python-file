@@ -27,13 +27,18 @@ def decod():
  for i in decoding:
       if result != "":
         result = result + " "
-      if len(i) <= 2:
+      if(len(i)<=2 and len(i)>=9):
+       if len(i) <= 2:
     
         result = result + i[::-1]
-      else:
+       else :
         decodeword1=i[3:-3]
         newword=decodeword1[-1]+decodeword1[:-1]
         result+=newword
+      else:
+        print("invalid decode please enter the proper code")
+        break
+     
  print(result)
 while True:
  str1 =input("Enter the code\n")
