@@ -16,7 +16,7 @@ print(cosh(1))
 # The "as" keyword 
 # import math as m
 
-# using dir function you can print all the function from math
+# using dir function you can print all the function from the module
 
 import pandas
 print(dir(pandas))
