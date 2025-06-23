@@ -1,0 +1,61 @@
+# Rock,Paper,Scissors
+import random
+import pyttsx3
+engine = pyttsx3.init()
+print("Hii everyone this is a Rock-Paper-Scissors game")
+engine.say("hii manvik this is a Rock-Paper-Scissors game ")
+engine.runAndWait()# 
+
+# intilize Rock='rock' paper="paper" scissor='scissors'
+options=['rock','paper','scissors']
+
+round=int(input("Enter the round:"))
+i=0
+player_won=0
+computer_won=0
+while(i<round):
+    try:
+        user=input("Enter your choice in options['rock','paper','scissors']")
+    except EOFError as e:
+        print(e)
+    if user != 'rock' and user!= 'paper' and user != 'scissors':
+        print("Invalid input, try again\n")
+        continue
+    computer=random.choice(options)
+    print("computer choice is:",computer)
+
+    # who won according the choices
+    if computer=='rock':
+       if user=='paper':
+           player_won+=1 
+       elif user=='scissors':
+           computer_won+=1
+    elif computer=='paper':
+        if user=='scissors':
+           player_won+=1 
+        elif user=='rock':
+           computer_won+=1
+    elif computer=='scissors':
+        if user=='rock':
+           player_won+=1 
+        elif user=='paper':
+           computer_won+=1
+    
+    i+=1
+print("user winning the round",player_won)
+print("comupter winning the round",computer_won)
+if(player_won>computer_won):
+    massage="wow! you won the match"
+    print(massage)
+    engine.say(massage)
+    engine.runAndWait()
+    
+elif(player_won<computer_won):
+    massage2="Sorry! computer is  winning the match"
+    print(massage2)
+    engine.say(massage2)
+    engine.runAndWait()
+else:
+    print("Draw the match")
+    engine.say("Draw the match")
+    engine.runAndWait()
